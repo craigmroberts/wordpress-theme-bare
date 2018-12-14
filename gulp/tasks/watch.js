@@ -18,17 +18,14 @@ gulp.task('watch', function() {
 
   // PHP file changes
   gulp.watch('./src/templates/**/*', gulp.series('php','phpInject'), function() {
-    //browserSync.reload();
   });
 
   // CSS changes
   gulp.watch('./src/styles/**/*',  gulp.series('styles','cssInject'), function () {
-
   });
 
   // JavaScript main changes
   gulp.watch('./src/scripts/**/*',  gulp.series('scripts','jsInject'), function () {
-    //browserSync.reload();
   });
 });
 

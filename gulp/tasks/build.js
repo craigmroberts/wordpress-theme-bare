@@ -6,7 +6,8 @@ gulp.task('build',
     gulp.parallel(
       'php',
       'styles',
-      'scripts'
+      'scripts',
+      'fonts'
     )
   )
 );

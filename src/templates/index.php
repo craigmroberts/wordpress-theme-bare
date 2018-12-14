@@ -6,8 +6,7 @@
     <link rel="stylesheet" href="/assets/styles/styles.css">
   </head>
   <body>
-    <h1>hi there </h1>
-
+    <h1>Title</h1>
     <script type="text/javascript" src="/assets/scripts/app.bundle.js"></script>
   </body>
 </html>

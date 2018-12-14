@@ -11,4 +11,11 @@
     License URI: http://opensource.org/licenses/mit-license.php
 */
 
-@import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/@fortawesome/fontawesome-free/css/all.css";
+
+@import "mixins";
+
+// Google fonts that we will be using. To use = font-family: Kavoon;
+$fonts: Roboto, Montserrat, Source Sans, Lato, Source Sans Pro;
+@include googleFonts($fonts);

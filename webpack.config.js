@@ -14,9 +14,11 @@ module.exports = {
     compress: true, // enable gzip compression
   },
   module: {
-    rules: [{
-      exclude: path.resolve(__dirname,'node_modules'),
-      loader: 'babel-loader'
-    }]
+    rules: [
+      {
+        exclude: path.resolve(__dirname,'node_modules'),
+        loader: 'babel-loader'
+      }
+    ]
   }
 }

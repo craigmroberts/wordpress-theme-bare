@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     newer = require('gulp-newer');
 
 // image settings
-const images = {
+var images = {
   src : './src/images/**/*',
   build : './dist/assets/images/'
 };
