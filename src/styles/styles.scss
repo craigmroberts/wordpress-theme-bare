@@ -1,12 +1,14 @@
 /*!
-    Theme Name: My Theme
-    Theme URI: http://www.sitepoint.com/
-    Description: Demonstration theme
+    Theme Name: Bare
+    Theme URI: https://craigmroberts.com/themes/
+    Description: This is a bare bones worpdress theme
     Version: 1.0.0
-    Author: Craig Buckler (@craigbuckler)
-    Author URI: http://www.sitepoint.com/
-    Tags: Gulp
+    Author: Craig M Roberts (craigmroberts)
+    Author URI: https://craigmroberts.com/
+    Tags: Gulp, SCSS, Babel
 
     License: MIT
     License URI: http://opensource.org/licenses/mit-license.php
 */
+
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
