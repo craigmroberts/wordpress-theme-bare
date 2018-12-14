@@ -1,11 +1,12 @@
 var gulp = require('gulp'),
+    cons = require('../constants.js'),
     imagemin = require('gulp-imagemin'),
     newer = require('gulp-newer');
 
 // image settings
 var images = {
-  src : './src/images/**/*',
-  build : './dist/assets/images/'
+  src : cons.src + '/images/**/*',
+  build : cons.dist + '/assets/images/'
 };
 
 // image processing

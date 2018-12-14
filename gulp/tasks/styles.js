@@ -1,4 +1,5 @@
 var gulp = require('gulp'),
+    cons = require('../constants.js'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -10,12 +11,12 @@ var gulp = require('gulp'),
 
 // CSS settings
 var css = {
-  src : './src/styles/styles.scss',
-  watch : './src/styles/**/*',
-  build : './dist/assets/styles/',
+  src : cons.src + '/styles/styles.scss',
+  watch : cons.src + '/styles/**/*',
+  build : cons.dist + '/assets/styles/',
   sassOpts: {
     outputStyle : 'compressed',
-    imagePath : './dist/assets/images/',
+    imagePath : cons.dist + '/assets/images/',
     precision : 3,
     errLogToConsole : true
   }
@@ -33,8 +34,8 @@ gulp.task('styles', gulp.series(function () {
     .pipe(postCss([postCssImport,cssnano()]))
     .pipe(autoprefixer('last 2 versions'))            // Autoprefix for the latest 2 browsers
 //    .pipe(rename('layout.css'))                   // Rename our file
-    .pipe(sourcemaps.write('./dist/assets/styles/')) // Write a sourcemap
-    .pipe(gulp.dest('./dist/assets/styles/'))       // Save to the dist directory
+    .pipe(sourcemaps.write(cons.dist + '/assets/styles/')) // Write a sourcemap
+    .pipe(gulp.dest(cons.dist + '/assets/styles/'))       // Save to the dist directory
     .pipe(gulp.dest(css.build))
     .pipe(browserSync.stream());
 }));

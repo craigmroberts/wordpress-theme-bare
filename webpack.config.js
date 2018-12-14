@@ -1,16 +1,17 @@
-var path = require('path');
+var path = require('path'),
+    cons = require('./gulp/constants.js');
 
 module.exports = {
   mode: 'production',
-  entry: './src/scripts/app.js',
+  entry: cons.src + '/scripts/app.js',
 
   output:{
       filename: 'app.bundle.js',
-      path: path.resolve(__dirname, 'dist/assets/scripts/')
+      path: path.resolve(__dirname, cons.dist + '/assets/scripts/')
   },
   devtool: 'source-map',
   devServer:{
-    contentBase: 'dist',
+    contentBase: cons.dist,
     compress: true, // enable gzip compression
   },
   module: {

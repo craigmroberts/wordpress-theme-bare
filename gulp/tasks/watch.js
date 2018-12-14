@@ -1,4 +1,5 @@
 var gulp = require('gulp'),
+    cons = require('../constants.js'),
     browserSync = require('browser-sync').create();
 
 gulp.task('watch', function() {
@@ -7,39 +8,39 @@ gulp.task('watch', function() {
       injectChanges: true,
       notify: false,
       port: 8080,
-  		proxy: 'http://local.theme.com/', // MAMP vhost
+  		proxy: 'http://local.wordpress.com/', // MAMP vhost
   		reloadOnRestart: true,
   });
 
   // Image changes
-  gulp.watch('./src/images/**/*',  gulp.series('images'), function () {
+  gulp.watch(cons.src + '/images/**/*',  gulp.series('images'), function () {
     browserSync.reload();
   });
 
   // PHP file changes
-  gulp.watch('./src/templates/**/*', gulp.series('php','phpInject'), function() {
+  gulp.watch(cons.src + '/templates/**/*', gulp.series('php','phpInject'), function() {
   });
 
   // CSS changes
-  gulp.watch('./src/styles/**/*',  gulp.series('styles','cssInject'), function () {
+  gulp.watch(cons.src + '/styles/**/*',  gulp.series('styles','cssInject'), function () {
   });
 
   // JavaScript main changes
-  gulp.watch('./src/scripts/**/*',  gulp.series('scripts','jsInject'), function () {
+  gulp.watch(cons.src + '/scripts/**/*',  gulp.series('scripts','jsInject'), function () {
   });
 });
 
 gulp.task('phpInject', function() {
-    return gulp.src('./dist/**/*')
+    return gulp.src(cons.dist + '/**/*')
       .pipe(browserSync.stream());
 });
 
 gulp.task('cssInject', function() {
-    return gulp.src('./dist/assets/styles/styles.css')
+    return gulp.src(cons.dist + '/assets/styles/styles.css')
       .pipe(browserSync.stream());
 });
 
 gulp.task('jsInject', function() {
-    return gulp.src('./dist/assets/scripts/app.bundle.js')
+    return gulp.src(cons.dist + '/assets/scripts/app.bundle.js')
       .pipe(browserSync.stream());
 });

@@ -1,9 +1,10 @@
-var gulp = require('gulp');
+var gulp = require('gulp'),
+    cons = require('../constants.js');
 
 // image settings
 var fonts = {
   src : './node_modules/@fortawesome/fontawesome-free/webfonts/**/*',
-  build : './dist/assets/webfonts/'
+  build : cons.dist + '/assets/webfonts/'
 };
 
 // Copy fonts folder to destination

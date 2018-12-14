@@ -1,11 +1,12 @@
 var gulp = require('gulp'),
+    cons = require('../constants.js'),
     browserSync = require('browser-sync').create(),
     newer = require('gulp-newer');
 
 // PHP settings
 var php = {
-  src : './src/templates/**/*',
-  build : './dist/'
+  src : cons.src + '/templates/**/*',
+  build : cons.dist + '/'
 };
 
 // copy PHP files
