@@ -1,7 +1,7 @@
 /*!
-    Theme Name: Bare
-    Theme URI: https://craigmroberts.com/themes/wordpress/bare/
-    Description: This is an simple bare worpdress theme
+    Theme Name: Apple 2
+    Theme URI: https://craigmroberts.com/themes/wordpress/apple/
+    Description: This is an apple worpdress theme
     Version: 1.0.0
     Author: Craig M Roberts (craigmroberts)
     Author URI: https://craigmroberts.com/
@@ -12,7 +12,9 @@
 */
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
-@import "../../node_modules/@fortawesome/fontawesome-free/css/all.css";
+@import "../vendors/fontawesome-free/scss/fontawesome.scss";
+@import "../vendors/fontawesome-free/scss/solid.scss";
+@import "../vendors/fontawesome-free/scss/brands.scss";
 
 // Add core wordpress styles
 @import "./core/styles";
