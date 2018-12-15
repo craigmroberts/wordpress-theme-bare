@@ -4,7 +4,7 @@ var gulp = require('gulp'),
 // image settings
 var fonts = {
   src : './node_modules/@fortawesome/fontawesome-free/webfonts/**/*',
-  build : cons.dist + '/assets/webfonts/'
+  build : cons.dist + cons.assets + 'webfonts/'
 };
 
 // Copy fonts folder to destination

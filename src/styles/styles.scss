@@ -1,7 +1,7 @@
 /*!
     Theme Name: Bare
-    Theme URI: https://craigmroberts.com/themes/
-    Description: This is a bare bones worpdress theme
+    Theme URI: https://craigmroberts.com/themes/wordpress/bare/
+    Description: This is an simple bare worpdress theme
     Version: 1.0.0
     Author: Craig M Roberts (craigmroberts)
     Author URI: https://craigmroberts.com/
@@ -14,93 +14,8 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "../../node_modules/@fortawesome/fontawesome-free/css/all.css";
 
-@import "mixins";
+// Add core wordpress styles
+@import "./core/styles";
 
-// Google fonts that we will be using. To use = font-family: Kavoon;
-$fonts: Roboto, Montserrat, Source Sans, Lato, Source Sans Pro;
-@include googleFonts($fonts);
-
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Normalize
-# Typography
-# Elements
-# Forms
-# Navigation
- ## Links
- ## Menus
-# Accessibility
-# Alignments
-# Clearings
-# Widgets
-# Content
- ## Posts and pages
- ## Comments
-# Infinite scroll
-# Media
- ## Captions
- ## Galleries
---------------------------------------------------------------*/
-@import "variables-site/variables-site";
-@import "mixins/mixins-master";
-
-/*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
-@import "normalize";
-
-/*--------------------------------------------------------------
-# Typography
---------------------------------------------------------------*/
-@import "typography/typography";
-
-/*--------------------------------------------------------------
-# Elements
---------------------------------------------------------------*/
-@import "elements/elements";
-
-/*--------------------------------------------------------------
-# Forms
---------------------------------------------------------------*/
-@import "forms/forms";
-
-/*--------------------------------------------------------------
-# Navigation
---------------------------------------------------------------*/
-@import "navigation/navigation";
-
-/*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
-@import "modules/accessibility";
-
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-@import "modules/alignments";
-
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
-@import "modules/clearings";
-
-/*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-@import "site/secondary/widgets";
-
-/*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
-@import "site/site";
-
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
-@import "modules/infinite-scroll";
-
-/*--------------------------------------------------------------
-# Media
---------------------------------------------------------------*/
-@import "media/media";
+// Add custom styles
+@import "./custom/styles";

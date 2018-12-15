@@ -7,16 +7,17 @@ var gulp = require('gulp'),
     postCss = require('gulp-postcss'),
     postCssImport = require('postcss-import'),
     cssnano = require('cssnano'),
+    rename = require('gulp-rename'),
     browserSync = require('browser-sync').create();
 
 // CSS settings
 var css = {
   src : cons.src + '/styles/styles.scss',
   watch : cons.src + '/styles/**/*',
-  build : cons.dist + '/assets/styles/',
+  build : cons.dist + '/', //wordpresss needs the css in root of theme
   sassOpts: {
     outputStyle : 'compressed',
-    imagePath : cons.dist + '/assets/images/',
+    imagePath : cons.dist + cons.assets + 'images/',
     precision : 3,
     errLogToConsole : true
   }
@@ -27,15 +28,15 @@ gulp.task('styles', gulp.series(function () {
 
   return gulp.src(css.src)
     .pipe(sass(css.sassOpts)
-      .on('error', function(error) {            // Error reporting that won't stop your watch task
+      .on('error', function(error) {         // Error reporting that won't stop your watch task
         gutil.log(error.message);
       this.emit('end');
     }))
     .pipe(postCss([postCssImport,cssnano()]))
-    .pipe(autoprefixer('last 2 versions'))            // Autoprefix for the latest 2 browsers
-//    .pipe(rename('layout.css'))                   // Rename our file
-    .pipe(sourcemaps.write(cons.dist + '/assets/styles/')) // Write a sourcemap
-    .pipe(gulp.dest(cons.dist + '/assets/styles/'))       // Save to the dist directory
+    .pipe(autoprefixer('last 2 versions'))   // Autoprefix for the latest 2 browsers
+    .pipe(rename('style.css'))               // Rename our file
+    .pipe(sourcemaps.write(cons.dist + '/')) // Write a sourcemap
+    .pipe(gulp.dest(cons.dist + '/'))        // Save to the dist directory
     .pipe(gulp.dest(css.build))
     .pipe(browserSync.stream());
 }));

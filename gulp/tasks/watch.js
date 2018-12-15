@@ -36,11 +36,11 @@ gulp.task('phpInject', function() {
 });
 
 gulp.task('cssInject', function() {
-    return gulp.src(cons.dist + '/assets/styles/styles.css')
+    return gulp.src(cons.dist + '/style.css')
       .pipe(browserSync.stream());
 });
 
 gulp.task('jsInject', function() {
-    return gulp.src(cons.dist + '/assets/scripts/app.bundle.js')
+    return gulp.src(cons.dist + cons.assets + 'scripts/app.bundle.js')
       .pipe(browserSync.stream());
 });

@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 // image settings
 var images = {
   src : cons.src + '/images/**/*',
-  build : cons.dist + '/assets/images/'
+  build : cons.dist + cons.assets + 'images/'
 };
 
 // image processing
