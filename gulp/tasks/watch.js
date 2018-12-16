@@ -12,35 +12,44 @@ gulp.task('watch', function() {
   		reloadOnRestart: true,
   });
 
-  // Image changes
-  gulp.watch(cons.src + '/images/**/*',  gulp.series('images'), function () {
-    browserSync.reload();
+    // Image changes
+    gulp.watch(cons.src + '/images/**/*',  gulp.series('images'), function () {
+      browserSync.reload();
+    });
+
+    // SVG file changes
+    gulp.watch(cons.src + '/svg/**/*', gulp.series('svg','svgInject'), function() {
+    });
+
+    // PHP file changes
+    gulp.watch(cons.src + '/templates/**/*', gulp.series('php','phpInject'), function() {
+    });
+
+    // CSS changes
+    gulp.watch(cons.src + '/styles/**/*',  gulp.series('styles','cssInject'), function () {
+    });
+
+    // JavaScript main changes
+    gulp.watch(cons.src + '/scripts/**/*',  gulp.series('scripts','jsInject'), function () {
+    });
   });
 
-  // PHP file changes
-  gulp.watch(cons.src + '/templates/**/*', gulp.series('php','phpInject'), function() {
+  gulp.task('phpInject', function() {
+      return gulp.src(cons.dist + '/**/*')
+        .pipe(browserSync.stream());
   });
 
-  // CSS changes
-  gulp.watch(cons.src + '/styles/**/*',  gulp.series('styles','cssInject'), function () {
+  gulp.task('svgInject', function() {
+      return gulp.src(cons.dist + '/**/*')
+        .pipe(browserSync.stream());
   });
 
-  // JavaScript main changes
-  gulp.watch(cons.src + '/scripts/**/*',  gulp.series('scripts','jsInject'), function () {
+  gulp.task('cssInject', function() {
+      return gulp.src(cons.dist + '/style.css')
+        .pipe(browserSync.stream());
   });
-});
 
-gulp.task('phpInject', function() {
-    return gulp.src(cons.dist + '/**/*')
-      .pipe(browserSync.stream());
-});
-
-gulp.task('cssInject', function() {
-    return gulp.src(cons.dist + '/style.css')
-      .pipe(browserSync.stream());
-});
-
-gulp.task('jsInject', function() {
-    return gulp.src(cons.dist + cons.assets + 'scripts/app.bundle.js')
-      .pipe(browserSync.stream());
-});
+  gulp.task('jsInject', function() {
+      return gulp.src(cons.dist + cons.assets + 'scripts/app.bundle.js')
+        .pipe(browserSync.stream());
+  });

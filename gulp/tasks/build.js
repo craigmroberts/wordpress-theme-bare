@@ -7,7 +7,9 @@ gulp.task('build',
       'php',
       'styles',
       'scripts',
-      'fonts'
+      'fonts',
+      'images',
+      'svg'
     )
   )
 );
