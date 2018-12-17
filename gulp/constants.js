@@ -1,7 +1,9 @@
 var cons = {
+  themeDirName : 'bare',
   src : './src',
-  dist : '/Users/craigmorganroberts/Documents/projects/wordpress/core/wp-content/themes/apple', // './dist'
+  dist : './public/wp-content/themes/bare', // './dist'
   temp : './temp',
+  public : './public',
   assets : '/' // assets directory
 }
 
