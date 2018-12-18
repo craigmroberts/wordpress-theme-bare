@@ -8,7 +8,7 @@ gulp.task('watch', function() {
       injectChanges: true,
       notify: false,
       port: 8080,
-  		proxy: 'http://local.wordpress.com/', // MAMP vhost
+  		proxy: 'http://bare.local/', // MAMP vhost
   		reloadOnRestart: true,
   });
 
